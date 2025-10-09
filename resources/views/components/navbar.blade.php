@@ -21,6 +21,8 @@
                            <a href="/kontak" class="{{ request()->is('kontak') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Kontak</a>
                             <a href="/guardian" class="{{ request()->is('guardian') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Guardian</a>
                             <a href="/classroom" class="{{ request()->is('classroom') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Classroom</a>
+                            <a href="/teacher" class="{{ request()->is('teacher') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Teacher</a>
+                            <a href="/subject" class="{{ request()->is('subject') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Subject</a>
                         
                         </div>
                     </div>
@@ -50,6 +52,9 @@
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Sign out</a>
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Guardian</a>
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Classroom</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Subject</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Teacher</a>
+
                             </el-menu>
                         </el-dropdown>
                     </div>
@@ -81,6 +86,9 @@
                 <x-nav-link-mobile href="/kontak" :active="request()->is('kontak')">kontak</x-nav-link-mobile>
                 <x-nav-link-mobile href="/guardian" :active="request()->is('guardian')">guardian</x-nav-link-mobile>
                 <x-nav-link-mobile href="/classroom" :active="request()->is('classroom')">classroom</x-nav-link-mobile>
+                <x-nav-link-mobile href="/teacher" :active="request()->is('teacher')">teacher</x-nav-link-mobile>
+                <x-nav-link-mobile href="/subject" :active="request()->is('subject')">subject</x-nav-link-mobile>
+                
             </div>
             <div class="border-t border-white/10 pt-4 pb-3">
                 <div class="flex items-center px-5">
