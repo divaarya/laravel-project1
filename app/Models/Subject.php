@@ -9,8 +9,11 @@ class Subject extends Model
 {
     use HasFactory;
 
-    public function teacher()
-    {
-        return $this->hasOne(Teacher::class, 'subject_id');
-    }
+    protected $fillable = [
+        'name',
+        'description',
+        'teacher_name',
+        'phone',
+        'address'
+    ];
 }
