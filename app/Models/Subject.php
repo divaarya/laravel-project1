@@ -15,5 +15,10 @@ class Subject extends Model
         'teacher_name',
         'phone',
         'address'
+
     ];
+    public function teachers()
+    {
+        return $this->hasOne(Teacher::class);
+    }
 }

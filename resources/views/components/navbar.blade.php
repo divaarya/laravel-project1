@@ -4,110 +4,149 @@
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
                     <div class="shrink-0">
-                        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" class="size-8" />
+                        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                             alt="Your Company" class="size-8" />
                     </div>
+
+                    <!-- Desktop Menu -->
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <!-- Menu Desktop -->
 
-                             <x-nav-link
-                                href="/home"
-                                :active="request()->is('home')"
-                                >Home
-                              </x-nav-link>
-                            <a href="/student" class="{{ request()->is('student') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Student</a>
-                            <a href="/beranda" class="{{ request()->is('beranda') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Beranda </a>
-                           <a href="/profil" class="{{ request()->is('profil') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Profile</a>
-                           <a href="/kontak" class="{{ request()->is('kontak') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Kontak</a>
-                            <a href="/guardian" class="{{ request()->is('guardian') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Guardian</a>
-                            <a href="/classroom" class="{{ request()->is('classroom') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Classroom</a>
-                            <a href="/teacher" class="{{ request()->is('teacher') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Teacher</a>
-                            <a href="/subject" class="{{ request()->is('subject') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Subject</a>
-                        
+                            <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                                Home
+                            </x-nav-link>
+
+                            <x-nav-link :href="route('admin.student.index')" :active="request()->routeIs('admin.student.*')">
+                                Student
+                            </x-nav-link>
+
+                            <x-nav-link href="/beranda" :active="request()->is('beranda')">
+                                Beranda
+                            </x-nav-link>
+
+                            <x-nav-link href="/profil" :active="request()->is('profil')">
+                                Profil
+                            </x-nav-link>
+
+                            <x-nav-link href="/kontak" :active="request()->is('kontak')">
+                                Kontak
+                            </x-nav-link>
+
+                            <x-nav-link :href="route('admin.guardian.index')" :active="request()->routeIs('admin.guardian.*')">
+                                Guardian
+                            </x-nav-link>
+
+                            <x-nav-link :href="route('admin.classroom.index')" :active="request()->routeIs('admin.classroom.*')">
+                                Classroom
+                            </x-nav-link>
+
+                            <x-nav-link :href="route('admin.teacher.index')" :active="request()->routeIs('admin.teacher.*')">
+                                Teacher
+                            </x-nav-link>
+
+                            <x-nav-link :href="route('admin.subject.index')" :active="request()->routeIs('admin.subject.*')">
+                                Subject
+                            </x-nav-link>
+
                         </div>
                     </div>
                 </div>
+
+                <!-- NOTIF + PROFILE -->
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <!-- Notifikasi -->
-                        <button type="button" class="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-                            <span class="absolute -inset-1.5"></span>
-                            <span class="sr-only">View notifications</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6">
-                                <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
+
+                        <button type="button"
+                                class="relative rounded-full p-1 text-gray-400 hover:text-white">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                 class="size-6">
+                                <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 
+                                         18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 
+                                         6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 
+                                         0a24.255 24.255 0 0 1-5.714 
+                                         0m5.714 0a3 3 0 1 1-5.714 0"
+                                      stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
 
-                        <!-- Profile dropdown -->
                         <el-dropdown class="relative ml-3">
-                            <button class="relative flex max-w-xs items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                                <span class="absolute -inset-1.5"></span>
-                                <span class="sr-only">Open user menu</span>
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-8 rounded-full outline -outline-offset-1 outline-white/10" />
+                            <button class="relative flex max-w-xs items-center rounded-full">
+                                <img class="size-8 rounded-full"
+                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+                                     alt="">
                             </button>
 
-                            <el-menu anchor="bottom end" popover class="w-48 origin-top-right rounded-md bg-gray-800 py-1 outline-1 -outline-offset-1 outline-white/10">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Your profile</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Settings</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Sign out</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Guardian</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Classroom</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Subject</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">Teacher</a>
+                            <el-menu anchor="bottom end"
+                                     class="w-48 bg-gray-800 py-1 rounded-md">
+
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">
+                                    Your profile
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">
+                                    Settings
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-white/5">
+                                    Sign out
+                                </a>
 
                             </el-menu>
                         </el-dropdown>
                     </div>
                 </div>
 
-                <!-- Tombol Mobile -->
+                <!-- Mobile Button -->
                 <div class="-mr-2 flex md:hidden">
-                    <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-                        <span class="absolute -inset-0.5"></span>
-                        <span class="sr-only">Open main menu</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 in-aria-expanded:hidden">
-                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 not-in-aria-expanded:hidden">
-                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                    <button type="button" command="--toggle" commandfor="mobile-menu"
+                            class="rounded-md p-2 text-gray-400 hover:text-white">
+                        <svg class="size-6 in-aria-expanded:hidden" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu -->    
-        <el-disclosure id="mobile-menu" hidden class="block md:hidden">
+        <!-- Mobile Menu -->
+        <el-disclosure id="mobile-menu" hidden class="md:hidden">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-                <x-nav-link-mobile href="/student" :active="request()->is('student')">Student</x-nav-link-mobile>
-                <x-nav-link-mobile href="/home" :active="request()->is('home')">Home</x-nav-link-mobile>
-                <x-nav-link-mobile href="/beranda" :active="request()->is('beranda')">beranda</x-nav-link-mobile>
-                <x-nav-link-mobile href="/profil" :active="request()->is('profil')">profil</x-nav-link-mobile>
-                <x-nav-link-mobile href="/kontak" :active="request()->is('kontak')">kontak</x-nav-link-mobile>
-                <x-nav-link-mobile href="/guardian" :active="request()->is('guardian')">guardian</x-nav-link-mobile>
-                <x-nav-link-mobile href="/classroom" :active="request()->is('classroom')">classroom</x-nav-link-mobile>
-                <x-nav-link-mobile href="/teacher" :active="request()->is('teacher')">teacher</x-nav-link-mobile>
-                <x-nav-link-mobile href="/subject" :active="request()->is('subject')">subject</x-nav-link-mobile>
-                
-            </div>
-            <div class="border-t border-white/10 pt-4 pb-3">
-                <div class="flex items-center px-5">
-                    <div class="shrink-0">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-10 rounded-full outline -outline-offset-1 outline-white/10" />
-                    </div>
-                    <div class="ml-3">
-                        <div class="text-base/5 font-medium text-white">Tom Cook</div>
-                        <div class="text-sm font-medium text-gray-400">tom@example.com</div>
-                    </div>
-                </div>
-                <div class="mt-3 space-y-1 px-2">
-                    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Your profile</a>
-                    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Settings</a>
-                    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Sign out</a>
-                    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Guardian</a>
-                    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Classroom</a>
-                </div>
-                
+
+                <x-nav-link-mobile :href="route('admin.student.index')" :active="request()->routeIs('admin.student.*')">
+                    Student
+                </x-nav-link-mobile>
+
+                <x-nav-link-mobile href="/home" :active="request()->is('home')">
+                    Home
+                </x-nav-link-mobile>
+
+                <x-nav-link-mobile href="/beranda" :active="request()->is('beranda')">
+                    Beranda
+                </x-nav-link-mobile>
+
+                <x-nav-link-mobile href="/profil" :active="request()->is('profil')">
+                    Profil
+                </x-nav-link-mobile>
+
+                <x-nav-link-mobile href="/kontak" :active="request()->is('kontak')">
+                    Kontak
+                </x-nav-link-mobile>
+
+                <x-nav-link-mobile :href="route('admin.guardian.index')" :active="request()->routeIs('admin.guardian.*')">
+                    Guardian
+                </x-nav-link-mobile>
+
+                <x-nav-link-mobile :href="route('admin.classroom.index')" :active="request()->routeIs('admin.classroom.*')">
+                    Classroom
+                </x-nav-link-mobile>
+
+                <x-nav-link-mobile :href="route('admin.teacher.index')" :active="request()->routeIs('admin.teacher.*')">
+                    Teacher
+                </x-nav-link-mobile>
+
+                <x-nav-link-mobile :href="route('admin.subject.index')" :active="request()->routeIs('admin.subject.*')">
+                    Subject
+                </x-nav-link-mobile>
+
             </div>
         </el-disclosure>
     </nav>

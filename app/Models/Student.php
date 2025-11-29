@@ -16,6 +16,7 @@ class Student extends Model
         'gender',
         'birthday',
         'classroom_id'
+        
     ];
 
     public function classroom()

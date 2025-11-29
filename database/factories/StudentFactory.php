@@ -21,7 +21,6 @@ class StudentFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'gender' => fake()->randomElement(['male', 'female']),
-            'birthday' => fake()->date(),
             'address' => fake()->address(),
             'classroom_id' => Classroom::factory(),
         ];

@@ -10,5 +10,7 @@ class Guardian extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'job', 'phone', 'email'];
+
 }
+
 

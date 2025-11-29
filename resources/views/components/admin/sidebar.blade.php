@@ -6,7 +6,7 @@
         <ul class="space-y-2 font-medium">
 
             <li>
-                <a href="/dashboard"
+                <a href="/admin/dashboard"
                     class="flex items-center p-2 text-gray-300 rounded-lg hover:bg-gray-700">
                     <i class="fa-solid fa-chart-pie mr-3"></i>
                     <span>Dashboard</span>
@@ -14,7 +14,7 @@
             </li>
 
             <li>
-                <a href="/student"
+                <a href="/admin/student"
                     class="flex items-center p-2 text-gray-300 rounded-lg hover:bg-gray-700">
                     <i class="fa-solid fa-user-graduate mr-3"></i>
                     <span>Students</span>
@@ -22,7 +22,7 @@
             </li>
 
             <li>
-                <a href="/teacher"
+                <a href="/admin/teacher"
                     class="flex items-center p-2 text-gray-300 rounded-lg hover:bg-gray-700">
                     <i class="fa-solid fa-chalkboard-teacher mr-3"></i>
                     <span>Teachers</span>
@@ -30,7 +30,7 @@
             </li>
 
             <li>
-                <a href="/classroom"
+                <a href="/admin/classroom"
                     class="flex items-center p-2 text-gray-300 rounded-lg hover:bg-gray-700">
                     <i class="fa-solid fa-school mr-3"></i>
                     <span>Classrooms</span>
@@ -38,7 +38,7 @@
             </li>
 
             <li>
-                <a href="/subject"
+                <a href="/admin/subject"
                     class="flex items-center p-2 text-gray-300 rounded-lg hover:bg-gray-700">
                     <i class="fa-solid fa-book mr-3"></i>
                     <span>Subjects</span>
@@ -46,7 +46,7 @@
             </li>
 
             <li>
-                <a href="/guardian"
+                <a href="/admin/guardian"
                     class="flex items-center p-2 text-gray-300 rounded-lg hover:bg-gray-700">
                     <i class="fa-solid fa-users mr-3"></i>
                     <span>Guardians</span>

@@ -1,4 +1,15 @@
-<a  {{ $attributes }} aria-curent="page"
-        aria-current="page" class="{{ $active ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} block rounded-md px-3 py-2 text-sm font-medium">
-       {{$slot}}
+@props(['active' => false])
+
+@php
+$classes = $active
+    ? 'bg-gray-900 text-white'
+    : 'text-gray-300 hover:bg-white/5 hover:text-white';
+@endphp
+
+<a 
+    {{ $attributes->merge([
+        'class' => $classes . ' block rounded-md px-3 py-2 text-sm font-medium'
+    ]) }}
+>
+    {{ $slot }}
 </a>

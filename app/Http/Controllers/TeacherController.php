@@ -4,29 +4,65 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Teacher;
+use App\Models\Subject;
 
 class TeacherController extends Controller
 {
     public function index()
     {
         $teachers = Teacher::with('subject')->get();
+        return view('teacher.index', compact('teachers'));
+    }
 
-        return view('teacher.index', [
-            'teachers' => $teachers,
-            'judul' => 'Daftar Guru'
-        ]);
+    public function create()
+    {
+        $subjects = Subject::all();
+        return view('teacher.create', compact('subjects'));
     }
 
     public function store(Request $request)
     {
-        $teacher = Teacher::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'address' => $request->address,
-            'subject_id' => null, // sementara manual
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'subject_id' => 'nullable|exists:subjects,id',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'nullable|string|max:50',
+            'address' => 'nullable|string|max:255',
         ]);
 
-        return response()->json($teacher);
+        Teacher::create($request->all());
+
+        return redirect()->route('teacher.index')->with('success', 'Guru berhasil ditambahkan!');
+    }
+
+    public function edit($id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        $subjects = Subject::all();
+        return view('teacher.edit', compact('teacher', 'subjects'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'subject_id' => 'nullable|exists:subjects,id',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'nullable|string|max:50',
+            'address' => 'nullable|string|max:255',
+        ]);
+
+        $teacher = Teacher::findOrFail($id);
+        $teacher->update($request->all());
+
+        return redirect()->route('teacher.index')->with('success', 'Guru berhasil diperbarui!');
+    }
+
+    public function destroy($id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        $teacher->delete();
+
+        return redirect()->route('teacher.index')->with('success', 'Guru berhasil dihapus!');
     }
 }
